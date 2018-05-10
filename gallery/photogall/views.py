@@ -5,4 +5,5 @@ from .models import Location,Category,Image
 
 # Create your views here.
 def landing(request):
-    return render(request,'index.html')
+    images = Image.get_image_by_id()
+    return render(request,'index.html',{"images":images})
